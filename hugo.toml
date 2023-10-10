@@ -1,3 +1,35 @@
 baseURL = 'https://blog.mattera.io/'
 languageCode = 'en-us'
 title = 'Stained Glass'
+theme = 'github.com/Mitrichius/hugo-theme-anubis'
+
+[params]
+dateform = "Jan 2, 2006"
+dateformShort = "Jan 2"
+dateformNum = "2006-01-02"
+dateformNumTime = "2006-01-02 15:04"
+
+homeSubtitle = 'Shared reflections'
+disableReadOtherPosts = false
+enableSharingButtons = true
+
+description = 'The blog and other content of Travis Mattera'
+keywords = 'homepage, blog'
+images = ['']
+
+[taxonomies]
+category = 'blog'
+tag = 'tags'
+series = 'series'
+
+[languages]
+[languages.en]
+title = "Stained Glass"
+[languages.en.params]
+subtitle = 'The blog and other content of Travis Mattera'
+readOtherPosts = 'Read other posts'
+
+[[menu.main]]
+identifier = 'blog'
+name = 'Blog'
+url = '/posts'
