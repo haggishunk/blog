@@ -1,0 +1,29 @@
+<article class="post-list h-feed">
+    <div class="post-header">
+        <header>
+            <h1 class="p-name post-title{{ if .Params.favorite }} favorite{{end}}{{ if .Params.draft }} draft{{end}}"><a class="u-url" href="{{ .RelPermalink }}">{{ trim .Title " " | markdownify }}</a></h1>
+        </header>
+        {{ partial "post-language-switcher.html" . }}
+    </div>
+
+    {{ if not .Site.Params.disableSummary }}
+        <div class="content post-summary p-summary">
+            <!-- upstream summary -->
+            <!-- {{ .Summary | safeHTML }} -->
+            <!-- custom summary --> 
+            {{ with .Description }}
+              {{ $.Scratch.Set "summary" (markdownify .) }}
+            {{ else }}
+              {{ $.Scratch.Set "summary" ((delimit (findRE "(?s)(<p.*?>.*?</p>)" .Content) "[&hellip;] ") | plainify | truncate (default 200 $.Site.Params.summary_length) (default " &hellip;" $.Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+            {{ end }}
+            {{ $.Scratch.Get "summary" }}
+        </div>
+    {{ end }}
+    {{ if and (.Truncated) (.Site.Params.readMore) }}
+        <div class="read-more">
+            <a class="u-url" href="{{ .RelPermalink }}">{{ i18n "readMore" }}</a>
+        </div>
+    {{ end }}
+    
+    {{ partial "post-info.html" . }}
+</article>
