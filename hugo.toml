@@ -1,7 +1,9 @@
 baseURL = 'https://blog.mattera.io/'
 languageCode = 'en-us'
-title = 'Stained Glass'
+title = 'Travis Mattera'
 theme = 'github.com/Mitrichius/hugo-theme-anubis'
+paginate = 10
+enableRobotsTXT = true
 
 [params]
 dateform = "Jan 2, 2006"
@@ -9,10 +11,23 @@ dateformShort = "Jan 2"
 dateformNum = "2006-01-02"
 dateformNumTime = "2006-01-02 15:04"
 
-homeSubtitle = 'Shared reflections'
+homeSubtitle = 'The blog and other content of Travis Mattera'
+style = 'dark-without-switcher'
 disableReadOtherPosts = false
 enableSharingButtons = true
 
+[[params.social]]
+id = 'github'
+name = 'haggishunk'
+[[params.social]]
+id = 'linkedin'
+url = 'https://linkedin.com/in/travis-mattera'
+[[params.social]]
+id = 'twitter'
+name = 'beepwhiz'
+
+email = 'travis@mattera.io'
+author = 'Travis Mattera'
 description = 'The blog and other content of Travis Mattera'
 keywords = 'homepage, blog'
 images = ['']
@@ -24,12 +39,12 @@ series = 'series'
 
 [languages]
 [languages.en]
-title = "Stained Glass"
+title = "Travis Mattera"
 [languages.en.params]
 subtitle = 'The blog and other content of Travis Mattera'
 readOtherPosts = 'Read other posts'
 
 [[menu.main]]
 identifier = 'blog'
-name = 'Blog'
+name = 'blog'
 url = '/posts'
